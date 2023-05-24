@@ -6,7 +6,7 @@ import re
 import json
 
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False #日本語を利用
+app.config['JSON_AS_ASCII'] = False  #日本語を利用
 
 # Form Recognizerの設定
 endpoint = "https://bvmc-test-s123.cognitiveservices.azure.com"
