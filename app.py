@@ -4,13 +4,14 @@ from azure.core.credentials import AzureKeyCredential
 import logging
 import re
 import json
+import os
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False  #日本語を利用
 
 # Form Recognizerの設定
-endpoint = "https://bvmc-test-s123.cognitiveservices.azure.com"
-key = "59dc239e8ed44be081aa3cf798cea518"
+endpoint = os.environ.get("ENDPOINT")
+key = os.environ.get("KEY")
 credential = AzureKeyCredential(key)
 client = DocumentAnalysisClient(endpoint, credential)
 
